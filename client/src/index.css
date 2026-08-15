@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #09090e;
+    color: #f1f5f9;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* =========================================================
+   Morning (Light Day) Mode CSS Overrides
+   Ensures 100% font visibility & crisp contrast across all pages
+   ========================================================= */
+
+.morning-mode {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Override background colors for containers in Morning mode */
+.morning-mode .bg-\[\#09090e\],
+.morning-mode .bg-\[\#0c0c14\],
+.morning-mode .bg-\[\#12121f\],
+.morning-mode .bg-\[\#0c0c16\],
+.morning-mode .bg-\[\#0e0e1a\],
+.morning-mode .bg-slate-900,
+.morning-mode .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+.morning-mode .bg-\[\#07070b\],
+.morning-mode footer {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Override glass components in Morning mode */
+.morning-mode .glass-panel {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04) !important;
+}
+
+.morning-mode .glass-card {
+  background: #ffffff !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.morning-mode .glass-card:hover {
+  border-color: #a855f7 !important;
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.12) !important;
+}
+
+.morning-mode .glass-input {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.morning-mode .glass-input:focus {
+  border-color: #8b5cf6 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2) !important;
+}
+
+.morning-mode .bg-white\/5,
+.morning-mode .bg-white\/10 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.morning-mode .border-white\/5,
+.morning-mode .border-white\/10 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Ensure Font Color Visibility in Morning Mode */
+.morning-mode .text-white,
+.morning-mode .text-slate-100 {
+  color: #0f172a !important;
+}
+
+.morning-mode .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.morning-mode .text-slate-300 {
+  color: #334155 !important;
+}
+
+.morning-mode .text-slate-400 {
+  color: #475569 !important;
+}
+
+.morning-mode .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Re-apply text-white for solid filled buttons, badges & headers */
+.morning-mode .bg-purple-600,
+.morning-mode .bg-purple-600 *,
+.morning-mode .bg-purple-500,
+.morning-mode .bg-purple-500 *,
+.morning-mode .bg-purple-700,
+.morning-mode .bg-purple-700 *,
+.morning-mode .bg-indigo-600,
+.morning-mode .bg-indigo-600 *,
+.morning-mode .bg-gradient-to-r,
+.morning-mode .bg-gradient-to-r *,
+.morning-mode .bg-gradient-to-tr,
+.morning-mode .bg-gradient-to-tr *,
+.morning-mode .bg-gradient-to-br,
+.morning-mode .bg-gradient-to-br *,
+.morning-mode .keep-white,
+.morning-mode .keep-white * {
+  color: #ffffff !important;
+}
+
+.morning-mode text {
+  fill: #1e293b !important;
+}
+
+/* =========================================================
+   Default Night (Dark) Custom Utilities
+   ========================================================= */
+.glass-panel {
+  background: rgba(18, 18, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(15, 15, 25, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card:hover {
+  border-color: rgba(147, 51, 234, 0.4);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover {
+  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.55);
+  transform: translateY(-1px);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.25);
+}
+
+.avatar-glow {
+  box-shadow: 0 0 50px rgba(147, 51, 234, 0.4), inset 0 0 20px rgba(147, 51, 234, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090e;
+}
+.morning-mode ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1e2d;
+  border-radius: 4px;
+}
+.morning-mode ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}

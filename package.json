@@ -1,0 +1,15 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "Shivam Srivastava Full Stack & Data Science Portfolio",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
