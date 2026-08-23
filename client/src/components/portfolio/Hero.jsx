@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { FiDownload, FiMail, FiCode, FiDatabase, FiTrendingUp, FiChevronDown } from 'react-icons/fi';
-import { FaLinkedinIn, FaGithub, FaTwitter, FaInstagram, FaPython } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaTwitter, FaInstagram, FaPython, FaFacebookF } from 'react-icons/fa';
+
 import { useTheme } from '../../context/ThemeContext';
 
 const iconMap = {
@@ -10,7 +11,9 @@ const iconMap = {
   FaGithub: FaGithub,
   FaTwitter: FaTwitter,
   FaInstagram: FaInstagram,
+  FaFacebookF: FaFacebookF,
 };
+
 
 const Hero = ({ about, socials }) => {
   const { currentTheme } = useTheme();
@@ -18,7 +21,7 @@ const Hero = ({ about, socials }) => {
   const shortBio =
     about?.shortBio ||
     'Versatile Full Stack Engineer and Data Analyst/Scientist specializing in scalable web applications, predictive machine learning models, and interactive data analytics dashboards.';
-  const profileImage = about?.profileImage || '/profile-nobg.png';
+  const profileImage = about?.profileImage || '/shiva_pro.jpeg';
   const resumeUrl = about?.resumeUrl && about.resumeUrl !== '#' ? about.resumeUrl : '/Shivam_2.0_CV.pdf';
 
   // Dynamic Typewriter Effect
@@ -135,7 +138,7 @@ const Hero = ({ about, socials }) => {
                       className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = '/profile-nobg.png';
+                        e.target.src = '/shiva_pro.jpeg';
                       }}
                     />
                   </div>
@@ -215,26 +218,26 @@ const Hero = ({ about, socials }) => {
                 })
               ) : (
                 <>
-                  <motion.a
-                    whileHover={{ scale: 1.15, rotate: 5, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    href="https://linkedin.com/in/shivam-srivastava"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-300 hover:text-white transition-all shadow-md"
-                  >
-                    <FaLinkedinIn size={18} />
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.15, rotate: -5, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    href="https://github.com/shivam-srivastava"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-300 hover:text-white transition-all shadow-md"
-                  >
-                    <FaGithub size={18} />
-                  </motion.a>
+                  {[
+                    { href: 'https://linkedin.com/in/shivam-srivastava0022', Icon: FaLinkedinIn, label: 'LinkedIn',  rotate: 5  },
+                    { href: 'https://github.com/shivam-sri-ng',              Icon: FaGithub,     label: 'GitHub',    rotate: -5 },
+                    { href: 'https://instagram.com/',                         Icon: FaInstagram,  label: 'Instagram', rotate: 5  },
+                    { href: 'https://twitter.com/',                           Icon: FaTwitter,    label: 'Twitter',   rotate: -5 },
+                    { href: 'https://facebook.com/',                          Icon: FaFacebookF,  label: 'Facebook',  rotate: 5  },
+                  ].map(({ href, Icon, label, rotate }) => (
+                    <motion.a
+                      key={label}
+                      whileHover={{ scale: 1.15, rotate, y: -2 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={label}
+                      className="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-300 hover:text-white transition-all shadow-md"
+                    >
+                      <Icon size={18} />
+                    </motion.a>
+                  ))}
                 </>
               )}
             </motion.div>
@@ -266,7 +269,7 @@ const Hero = ({ about, socials }) => {
                   className="w-full h-full object-cover object-top group-hover:scale-108 transition-transform duration-700"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = '/profile-nobg.png';
+                    e.target.src = '/shiva_pro.jpeg';
                   }}
                 />
                 

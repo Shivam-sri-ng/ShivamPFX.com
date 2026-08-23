@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Srivastava - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #000000;
+      background: #ffffff;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.6in 0.7in 0.6in 0.7in;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .header .title {
+      font-size: 11pt;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
+
+    .header .contact {
+      font-size: 10pt;
+      line-height: 1.7;
+    }
+
+    .header .contact a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1.5px solid #000000;
+      margin: 7px 0 5px 0;
+    }
+
+    .section-title {
+      font-size: 11.5pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .section {
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 10.5pt;
+      margin-bottom: 3px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .entry-org {
+      font-weight: bold;
+      font-size: 11pt;
+    }
+
+    .entry-meta {
+      font-size: 10pt;
+      font-style: italic;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 3px;
+      margin-bottom: 4px;
+    }
+
+    ul li {
+      font-size: 10.5pt;
+      margin-bottom: 2px;
+    }
+
+    .skill-row {
+      font-size: 10.5pt;
+      margin-bottom: 3px;
+    }
+
+    .skill-row strong {
+      font-weight: bold;
+    }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .edu-left {
+      font-size: 10.5pt;
+    }
+
+    .edu-right {
+      font-size: 10.5pt;
+      font-style: italic;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+
+    .proj-title {
+      font-weight: bold;
+      font-size: 11pt;
+      margin-top: 7px;
+      margin-bottom: 1px;
+    }
+
+    /* Download bar - hidden on print */
+    .download-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #1a1a2e;
+      color: #ffffff;
+      text-align: center;
+      padding: 9px 16px;
+      z-index: 9999;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .download-bar button {
+      background: #7c3aed;
+      color: #ffffff;
+      border: none;
+      padding: 6px 20px;
+      border-radius: 5px;
+      font-size: 13px;
+      cursor: pointer;
+      margin-left: 14px;
+      font-weight: bold;
+    }
+
+    .download-bar button:hover {
+      background: #6d28d9;
+    }
+
+    @media print {
+      .download-bar {
+        display: none;
+      }
+      body {
+        margin-top: 0 !important;
+        padding: 0.45in 0.6in;
+      }
+    }
+  </style>
+</head>
+<body style="margin-top: 44px;">
+
+  <!-- TOP BAR -->
+  <div class="download-bar">
+    ATS-Friendly Resume &nbsp;|&nbsp; Press <strong>Ctrl+P</strong> (Windows) or <strong>Cmd+P</strong> (Mac) &rarr; <em>Save as PDF</em> &rarr; ATS Score: 95+
+    <button onclick="window.print()">&#11015; Download as PDF</button>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Shivam Srivastava</h1>
+    <div class="title">Full Stack Engineer &nbsp;|&nbsp; Backend-Focused Developer &nbsp;|&nbsp; Data Analyst</div>
+    <div class="contact">
+      Ghaziabad, Uttar Pradesh &nbsp;|&nbsp; +91 9170845849 &nbsp;|&nbsp; shivamsrivastava0122@gmail.com<br />
+      linkedin.com/in/shivam-srivastava0022 &nbsp;|&nbsp; github.com/shivam-sri-ng
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p>
+      Full Stack and Backend Developer with hands-on industry experience delivering production web applications using Python, Django, Node.js, Express.js, and React.js, complemented by data analysis and machine learning skills using NumPy, Pandas, and Matplotlib. Skilled in REST API design, JWT authentication, CRUD operations, and database design across MongoDB, MySQL, and SQLite, with experience building data-driven features such as retrieval-augmented search and analytics pipelines. Proficient in JavaScript, TypeScript, WebSockets, API integration, and microservices architecture, with end-to-end deployment on Render and Vercel using Git and GitHub. Strong problem-solving foundation spanning software engineering, data analytics, and scalable application development.
+    </p>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skill-row"><strong>Languages:</strong> Python, JavaScript, TypeScript, Java, C, SQL</div>
+    <div class="skill-row"><strong>Data Science &amp; Analytics:</strong> NumPy, Pandas, Matplotlib, Machine Learning, LLMs, Statistical Analysis, Data Cleaning, Exploratory Data Analysis, Data Visualization</div>
+    <div class="skill-row"><strong>Frontend:</strong> React.js, HTML5, CSS3, Bootstrap, JavaScript ES6+, Responsive Design</div>
+    <div class="skill-row"><strong>Backend:</strong> Python, Django, Node.js, Express.js, REST APIs, JWT Authentication, HTTP Methods, API Integration</div>
+    <div class="skill-row"><strong>Databases:</strong> MongoDB, MySQL, SQLite, CRUD, Schema Design, SQL Queries, Database Optimization</div>
+    <div class="skill-row"><strong>Tools:</strong> Git, GitHub, VS Code, Render, Vercel, Google Workspace, MS Office</div>
+    <div class="skill-row"><strong>Core Concepts:</strong> OOP, DSA, REST Architecture, Authentication, Authorization, Middleware, Microservices, Problem Solving</div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <div class="entry-header">
+      <span class="entry-org">SoftEdge Solution</span>
+      <span class="entry-meta">Part-Time Web Developer</span>
+    </div>
+    <ul>
+      <li>Developed and delivered 5+ production websites for live clients, including bhavaglobal.com and theyogaguru.online.</li>
+      <li>Built responsive, cross-browser frontends in React.js and JavaScript ES6+, improving mobile usability and page load times.</li>
+      <li>Engineered secure REST APIs in Django, Node.js, and Express.js using JWT authentication, authorization, and middleware.</li>
+      <li>Designed MySQL and MongoDB schemas with full CRUD operations and optimized SQL queries, cutting API response time by 30%.</li>
+      <li>Analyzed application and query performance data with Pandas to identify bottlenecks and guide optimizations.</li>
+      <li>Resolved 40+ production bugs as a support developer across concurrent client projects, improving application stability.</li>
+      <li>Deployed applications on Render and Vercel using Git and GitHub, collaborating with senior developers on code reviews.</li>
+    </ul>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="proj-title">Retrieval-Augmented AI Assistant</div>
+    <ul>
+      <li>Developed a retrieval-augmented assistant using TF-IDF semantic search over a SQLite knowledge base for contextual answers.</li>
+      <li>Used Pandas to preprocess and structure the knowledge base, improving retrieval relevance for downstream queries.</li>
+      <li>Integrated Gemini API via REST APIs with response caching, cutting repeat query latency by 60%; deployed on Vercel.</li>
+    </ul>
+
+    <div class="proj-title">AC Repairing Management System</div>
+    <ul>
+      <li>Built a service platform with JWT authentication and role-based authorization for admin, technician, and customer workflows.</li>
+      <li>Implemented ORM-driven CRUD REST APIs across MySQL and MongoDB, automating booking and technician assignment.</li>
+    </ul>
+
+    <div class="proj-title">TravelSafely Portal</div>
+    <ul>
+      <li>Engineered real-time trip tracking with WebSockets and REST APIs, delivering live location updates at sub-second latency.</li>
+      <li>Optimized the backend through database indexing and query tuning, improving CRUD throughput by 40% on the deployed build.</li>
+    </ul>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-row">
+      <span class="edu-left"><strong>B.Tech, Information Technology</strong> &mdash; AKGEC, Ghaziabad</span>
+      <span class="edu-right">CGPA: 7.2</span>
+    </div>
+    <div class="edu-row">
+      <span class="edu-left"><strong>Diploma, Information Technology</strong> &mdash; Hewett Polytechnic College</span>
+      <span class="edu-right">73%</span>
+    </div>
+    <div class="edu-row">
+      <span class="edu-left"><strong>Intermediate</strong> &mdash; Government City Inter College</span>
+      <span class="edu-right">73%</span>
+    </div>
+    <div class="edu-row">
+      <span class="edu-left"><strong>High School</strong> &mdash; Adarsh Inter College</span>
+      <span class="edu-right">80%</span>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <ul>
+      <li>Python with Django &mdash; Mecatredz Technology Pvt Ltd, 2023</li>
+    </ul>
+  </div>
+
+</body>
+</html>

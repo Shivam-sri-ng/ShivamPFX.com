@@ -6,41 +6,44 @@ import { FaPython, FaReact, FaDatabase, FaBrain } from 'react-icons/fa';
 const defaultProjects = [
   {
     _id: '1',
-    title: 'Travel Safely Tourism Platform',
-    description: 'Complete web tourism portal providing itinerary booking, verified travel safety guidelines, and live emergency support.',
+    title: 'Retrieval-Augmented AI Assistant',
+    description:
+      'AI assistant using TF-IDF semantic search over a SQLite knowledge base. Integrated with Gemini API — repeat query latency cut by 60%. Deployed on Vercel.',
     longDescription:
-      'End-to-end web platform engineered for Travel Safely Tourism. Features interactive destination booking, automated itinerary generation, real-time safety advisories, verified local guide ratings, and secure payment gateway integration.',
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop',
-    liveUrl: 'https://github.com/shivam-srivastava',
-    githubUrl: 'https://github.com/shivam-srivastava',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'REST API'],
-    category: 'Full Stack',
+      'Developed a retrieval-augmented assistant using TF-IDF semantic search over a SQLite knowledge base for contextual answers. Used Pandas to preprocess and structure the knowledge base, improving retrieval relevance for downstream queries. Integrated Gemini API via REST APIs with response caching, cutting repeat query latency by 60%. Deployed on Vercel.',
+    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://github.com/shivam-sri-ng',
+    githubUrl: 'https://github.com/shivam-sri-ng',
+    technologies: ['Python', 'TF-IDF', 'SQLite', 'Pandas', 'Gemini API', 'REST APIs', 'Vercel'],
+    category: 'AI & ML',
     featured: true,
   },
   {
     _id: '2',
     title: 'AC Repairing Management System',
-    description: 'Comprehensive HVAC repair service & technician dispatch system with live tracking and automated invoice billing.',
+    description:
+      'Service platform with JWT authentication and role-based authorization for admin, technician & customer. ORM-driven CRUD REST APIs across MySQL and MongoDB.',
     longDescription:
-      'Scalable service management SaaS for AC repair & maintenance businesses. Includes automated technician assignment based on customer location, service ticket tracking, instant SMS alerts, and financial revenue reporting.',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop',
-    liveUrl: 'https://github.com/shivam-srivastava',
-    githubUrl: 'https://github.com/shivam-srivastava',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'JWT'],
+      'Built a service management platform with JWT authentication and role-based authorization covering admin, technician, and customer workflows. Implemented ORM-driven CRUD REST APIs across MySQL and MongoDB, automating booking and technician assignment. Features multi-role dashboards and full request lifecycle management.',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://github.com/shivam-sri-ng',
+    githubUrl: 'https://github.com/shivam-sri-ng',
+    technologies: ['Node.js', 'Express.js', 'JWT', 'MySQL', 'MongoDB', 'React.js', 'REST APIs'],
     category: 'Full Stack',
     featured: true,
   },
   {
     _id: '3',
-    title: 'Family Cafe King Franchise Management',
-    description: 'Multi-outlet franchise management platform for Family Cafe King with real-time POS, inventory, and franchise analytics.',
+    title: 'TravelSafely Portal',
+    description:
+      'Real-time trip tracking with WebSockets delivering live location updates at sub-second latency. Backend optimized with DB indexing — 40% throughput improvement.',
     longDescription:
-      'Enterprise franchise software built specifically for Family Cafe King outlets. Manages central inventory distribution, daily sales dashboards across franchise locations, digital menu customization, and customer loyalty rewards.',
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop',
-    liveUrl: 'https://github.com/shivam-srivastava',
-    githubUrl: 'https://github.com/shivam-srivastava',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Recharts'],
-    category: 'Franchise SaaS',
+      'Engineered real-time trip tracking with WebSockets and REST APIs, delivering live location updates at sub-second latency. Optimized the backend through database indexing and query tuning, improving CRUD throughput by 40% on the deployed build. Features live SOS alerts, trip history, and role-based traveler & guardian views.',
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://github.com/shivam-sri-ng',
+    githubUrl: 'https://github.com/shivam-sri-ng',
+    technologies: ['Node.js', 'Express.js', 'WebSockets', 'React.js', 'MongoDB', 'REST APIs'],
+    category: 'Full Stack',
     featured: true,
   },
 ];
@@ -51,7 +54,7 @@ const Projects = ({ projects }) => {
 
   const displayProjects = projects && projects.length > 0 ? projects : defaultProjects;
 
-  const categories = ['All', 'Full Stack', 'Franchise SaaS'];
+  const categories = ['All', 'AI & ML', 'Full Stack'];
 
   const filteredProjects = displayProjects.filter((p) => {
     if (selectedCategory === 'All') return true;

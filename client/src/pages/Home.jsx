@@ -20,6 +20,10 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let retryCount = 0;
+    const MAX_RETRIES = 3;
+    const RETRY_DELAY = 2000;
+
     const fetchData = async () => {
       try {
         const [aboutRes, skillsRes, projectsRes, socialsRes] = await Promise.allSettled([
@@ -29,6 +33,18 @@ const Home = () => {
           API.get('/social'),
         ]);
 
+        // Check if all calls failed (server not running yet)
+        const allFailed = [aboutRes, skillsRes, projectsRes, socialsRes].every(
+          (r) => r.status === 'rejected'
+        );
+
+        if (allFailed && retryCount < MAX_RETRIES) {
+          retryCount++;
+          console.warn(`Server not ready, retrying in ${RETRY_DELAY / 1000}s... (attempt ${retryCount}/${MAX_RETRIES})`);
+          setTimeout(fetchData, RETRY_DELAY);
+          return;
+        }
+
         if (aboutRes.status === 'fulfilled' && aboutRes.value?.data?.data) setAbout(aboutRes.value.data.data);
         if (skillsRes.status === 'fulfilled' && skillsRes.value?.data?.data) setSkills(skillsRes.value.data.data);
         if (projectsRes.status === 'fulfilled' && projectsRes.value?.data?.data) setProjects(projectsRes.value.data.data);
@@ -36,7 +52,10 @@ const Home = () => {
       } catch (err) {
         console.warn('Backend API connection offline, displaying initial UI template:', err);
       } finally {
-        setLoading(false);
+        // Only stop loading after all retries are done or data is fetched
+        if (retryCount === 0 || retryCount >= MAX_RETRIES) {
+          setLoading(false);
+        }
       }
     };
 
