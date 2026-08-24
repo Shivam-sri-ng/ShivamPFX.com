@@ -71,6 +71,7 @@ app.use('/api/certificates', require('./routes/certificatesRoutes'));
 app.use('/api/contact', require('./routes/contactRoutes'));
 app.use('/api/social', require('./routes/socialRoutes'));
 app.use('/api/upload', require('./routes/uploadRoutes'));
+app.use('/api/visitors', require('./routes/visitorsRoutes'));
 
 // Note: Frontend is deployed separately on Vercel.
 // Static file serving is NOT needed here on Render.

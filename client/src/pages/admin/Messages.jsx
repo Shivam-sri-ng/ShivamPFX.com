@@ -71,12 +71,24 @@ const Messages = () => {
               messages.map((msg) => (
                 <div key={msg._id} className="glass-card rounded-2xl p-5 border border-white/5 space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
-                    <div>
-                      <div className="flex items-center space-x-2">
-                        <h3 className="text-base font-bold text-white">{msg.name}</h3>
-                        <span className="text-xs text-purple-400">({msg.email})</span>
+                    <div className="flex items-center space-x-3">
+                      {/* Sender avatar — shows their initials from their name */}
+                      <img
+                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(msg.name || msg.email || 'User')}&background=6d28d9&color=fff&bold=true&size=80&rounded=true`}
+                        alt={msg.name}
+                        className="w-10 h-10 rounded-full shrink-0 object-cover"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = `https://ui-avatars.com/api/?name=User&background=6d28d9&color=fff&size=80`;
+                        }}
+                      />
+                      <div>
+                        <div className="flex items-center space-x-2">
+                          <h3 className="text-base font-bold text-white">{msg.name}</h3>
+                          <span className="text-xs text-purple-400">({msg.email})</span>
+                        </div>
+                        <p className="text-xs font-semibold text-slate-300 mt-0.5">Subject: {msg.subject}</p>
                       </div>
-                      <p className="text-xs font-semibold text-slate-300 mt-0.5">Subject: {msg.subject}</p>
                     </div>
 
                     <div className="flex items-center space-x-2">

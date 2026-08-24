@@ -33,10 +33,10 @@ const chartData = [
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [stats, setStats] = useState({
-    visitors: '1,248',
-    messagesCount: 32,
-    projectsCount: 6,
-    testimonialsCount: 8,
+    visitors: '—',
+    messagesCount: 0,
+    projectsCount: 0,
+    testimonialsCount: 0,
   });
   const [recentMessages, setRecentMessages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,9 +44,10 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [messagesRes, projectsRes] = await Promise.allSettled([
+        const [messagesRes, projectsRes, visitorsRes] = await Promise.allSettled([
           API.get('/contact'),
           API.get('/projects'),
+          API.get('/visitors'),
         ]);
 
         if (messagesRes.status === 'fulfilled') {
@@ -57,7 +58,12 @@ const Dashboard = () => {
 
         if (projectsRes.status === 'fulfilled') {
           const projs = projectsRes.value.data.data;
-          setStats((prev) => ({ ...prev, projectsCount: projs.length || 6 }));
+          setStats((prev) => ({ ...prev, projectsCount: projs.length || 0 }));
+        }
+
+        if (visitorsRes.status === 'fulfilled') {
+          const count = visitorsRes.value.data.count || 0;
+          setStats((prev) => ({ ...prev, visitors: count.toLocaleString() }));
         }
       } catch (err) {
         console.error('Error fetching dashboard data:', err);
@@ -287,10 +293,14 @@ const Dashboard = () => {
                     <img
                       src={
                         msg.avatar ||
-                        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop'
+                        `https://ui-avatars.com/api/?name=${encodeURIComponent(msg.name || msg.email || 'User')}&background=6d28d9&color=fff&bold=true&size=80&rounded=true`
                       }
                       alt={msg.name}
                       className="w-10 h-10 rounded-full object-cover shrink-0"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(msg.name || 'User')}&background=6d28d9&color=fff&bold=true&size=80`;
+                      }}
                     />
                     <div className="min-w-0">
                       <h4 className="text-sm font-semibold text-white truncate">{msg.name}</h4>

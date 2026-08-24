@@ -60,6 +60,12 @@ const Home = () => {
     };
 
     fetchData();
+
+    // Track real unique visitors (once per browser session)
+    if (!sessionStorage.getItem('pfx_visited')) {
+      sessionStorage.setItem('pfx_visited', '1');
+      API.post('/visitors/hit').catch(() => {});
+    }
   }, []);
 
   if (loading) {

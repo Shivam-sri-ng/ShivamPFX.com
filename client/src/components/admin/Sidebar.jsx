@@ -45,7 +45,7 @@ const Sidebar = ({ messageCount = 5, isOpen, setIsOpen }) => {
         {/* Top Logo / App name */}
         <div className="p-6 border-b border-white/5 flex items-center justify-between">
           <NavLink to="/" className="text-xl font-extrabold text-white tracking-tight font-['Space_Grotesk']">
-            Port<span className="text-purple-500">Folio</span>
+            Shivam<span className="text-purple-500">PRX</span>
             <span className="text-purple-400">.</span>
           </NavLink>
         </div>
