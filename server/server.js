@@ -72,15 +72,9 @@ app.use('/api/contact', require('./routes/contactRoutes'));
 app.use('/api/social', require('./routes/socialRoutes'));
 app.use('/api/upload', require('./routes/uploadRoutes'));
 
-// Serve Frontend Static Assets in Production Mode
-if (process.env.NODE_ENV === 'production') {
-  const clientDistPath = path.join(__dirname, '../client/dist');
-  app.use(express.static(clientDistPath));
+// Note: Frontend is deployed separately on Vercel.
+// Static file serving is NOT needed here on Render.
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(clientDistPath, 'index.html'));
-  });
-}
 
 // 404 & Error Handler
 app.use(notFound);
